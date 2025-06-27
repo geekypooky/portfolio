@@ -1,0 +1,140 @@
+
+
+.image-split {
+  position: relative;
+  width: 30%;
+  height: 80px;
+  overflow: hidden;
+  margin: 0 auto 60px auto;
+}
+
+.left-half,
+.right-half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  transition: transform 2s ease;
+  z-index: 1;
+}
+
+.left-half {
+  left: 0;
+  background-position: left;
+  transform: translateX(0);
+}
+
+.right-half {
+  right: 0;
+  background-position: right;
+  transform: translateX(0);
+}
+
+[data-aos="split-image"].aos-animate .left-half {
+  transform: translateX(-100%);
+}
+
+[data-aos="split-image"].aos-animate .right-half {
+  transform: translateX(100%);
+}
+
+.about-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+font-family: 'Trebuchet MS', sans-serif;
+  background: linear-gradient(45deg, #020734, #330101, #2e0101, #010c21);
+  background-size: 400% 400%;
+  animation: heroBGAnimation 15s ease infinite;
+}
+
+
+@keyframes heroBGAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+
+}
+
+
+
+.about-column {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-title,
+.section-title,
+.about-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: left;
+  color: firebrick;
+  width: 100%;
+}
+
+
+
+.skills-list,
+.about-description,
+.section-list {
+  font-size: 16px;
+  box-shadow: #020734;
+  background: rgb(42, 2, 2);
+  margin: 12px;
+  
+  padding: 19px;
+  border: #1e0202;
+  line-height: 1.9;
+  border-radius: 15px;
+  list-style: none;
+  text-align: left;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+    .about-column {
+      max-width: 80%;
+      text-align: center;
+      align-items: center;
+    }
+  
+  }
+
+  .skills-list:hover,
+.about-description:hover,
+.section-list:hover {
+ 
+  box-shadow: 0 4px 15px rgba(2, 24, 54, 0.3);
+  transform: scale(1.02);
+  border-color: #020f2d;
+  transition: all 0.5s ease-out; 
+}

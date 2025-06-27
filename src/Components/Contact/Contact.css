@@ -1,0 +1,191 @@
+
+
+
+
+.image-split {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  margin: 0px auto;
+  z-index: 10;
+}
+
+.left-half,
+.right-half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 10;
+}
+
+.left-half {
+  left: 0;
+  background-position: left;
+  animation-name: split-left;
+}
+
+.right-half {
+  right: 0;
+  background-position: right;
+  animation-name: split-right;
+}
+
+@keyframes split-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(510px); }
+}
+
+@keyframes split-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-510px); }
+}
+
+.split-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  font-size: 50px;
+  color: #780829;
+  font-weight:bolder;
+  text-shadow: 0 0 8px #350101;
+  pointer-events: none;
+}
+
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background-image: url('../../assets/Tranquility.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  gap: 60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  
+  justify-content: left;
+  align-items: center;
+}
+
+.contact-gif {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(11, 0, 0, 0.3);
+}
+
+
+.contact-right {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 3, 11, 0.75);
+  color: #ede9e8;
+  padding: 50px;
+  border-radius: 43px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(30, 11, 17, 0.5);
+  border: 1px solid rgba(217, 204, 198, 0.3);
+}
+.contact-right:hover{
+  box-shadow: 0 4px 15px rgba(2, 24, 54, 0.3);
+  transform: scale(1.02);
+  border-color: #020f2d;
+  transition: all 0.5s ease-out; 
+}
+
+
+.neon-header {
+  font-size: 26px;
+  font-weight: bolder;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-shadow: 0 0 10px #361f03, 0 0 20px #100701;
+  color: #a43805;
+
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.detail-item h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+  color: #d29e9e;
+  text-shadow: 0 0 3px #080000;
+}
+
+.detail-item p {
+  font-size:15px;
+  margin: 0;
+  color: #edebe5;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #e2e1db;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border: 1px solid #704f0c;
+  border-radius: 12px;
+}
+
+.social-links a:hover {
+  color: #928181;
+  border-color: #ff6b6b;
+  text-shadow: 0 0 5px #ff0000;
+}
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .neon-header {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .split-text {
+    font-size: 30px;
+  }
+
+  .contact-details {
+    gap: 20px;
+  }
+}
